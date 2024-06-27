@@ -1,11 +1,6 @@
 ﻿using System.Collections;
 using UnityEngine;
 
-[System.Serializable]
-public class MoveInfo
-{
-    public float speed;
-}
 
 [DisallowMultipleComponent]
 public class MoveController : MonoBehaviour

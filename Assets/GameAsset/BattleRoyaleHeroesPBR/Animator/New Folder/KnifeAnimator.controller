@@ -315,7 +315,7 @@ AnimatorState:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Hit2
+  m_Name: Hurt2
   m_Speed: 1
   m_CycleOffset: 0
   m_Transitions: []
@@ -367,7 +367,7 @@ AnimatorState:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Hit1
+  m_Name: Hurt1
   m_Speed: 1
   m_CycleOffset: 0
   m_Transitions: []
@@ -737,7 +737,7 @@ AnimatorStateMachine:
     m_Position: {x: 600, y: 132, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 1102570751679186064}
-    m_Position: {x: 600, y: 192, z: 0}
+    m_Position: {x: 600, y: 190, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 1102204110104624112}
     m_Position: {x: 600, y: 264, z: 0}

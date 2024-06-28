@@ -1,11 +1,13 @@
 ﻿
 
+using System.Linq;
 using UnityEngine;
 
 public class PlayerAttackState : PlayerState
 {
     public PlayerAttackState(Animator animator, string stateName, PlayerController player) : base(animator, stateName, player)
     {
+        player.AnimEventHandler.OnFinish += AnimationFinish;
     }
 
     public override void OnEnter()
@@ -17,7 +19,10 @@ public class PlayerAttackState : PlayerState
     public override void OnExit()
     {
         base.OnExit();
-        player.CanAttack = true;
     }
 
+    void AnimationFinish()
+    {
+        player.CanAttack = true;
+    }
 }

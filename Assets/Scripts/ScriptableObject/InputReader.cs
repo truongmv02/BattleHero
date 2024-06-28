@@ -10,8 +10,8 @@ public class InputReader : ScriptableObject, IPlayerActions
 {
     PlayerInputActions inputActions;
 
-    public event UnityAction<Vector2> Move = delegate { };
     public Vector3 Direction => inputActions.Player.Move.ReadValue<Vector2>();
+    public bool Fire { get; private set; }
 
     private void OnEnable()
     {
@@ -25,7 +25,15 @@ public class InputReader : ScriptableObject, IPlayerActions
 
     public void OnFire(InputAction.CallbackContext context)
     {
-
+        switch (context.phase)
+        {
+            case InputActionPhase.Started:
+            Fire = true;
+            break;
+            case InputActionPhase.Canceled:
+            Fire = false;
+            break;
+        }
     }
 
     public void OnLook(InputAction.CallbackContext context)
@@ -34,6 +42,5 @@ public class InputReader : ScriptableObject, IPlayerActions
 
     public void OnMove(InputAction.CallbackContext context)
     {
-        Move.Invoke(context.ReadValue<Vector2>());
     }
 }

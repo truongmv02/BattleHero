@@ -15,9 +15,11 @@ public abstract class BaseState : IState
     protected float crossFadeDuration = 0.1f;
     protected Animator animator;
     protected readonly int stateHashName;
+    protected string stateName;
     public BaseState(Animator animator, string stateName)
     {
         this.animator = animator;
+        this.stateName = stateName;
         stateHashName = Animator.StringToHash(stateName);
     }
     public virtual void OnEnter()
